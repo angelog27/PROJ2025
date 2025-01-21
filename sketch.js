@@ -1,11 +1,24 @@
 function setup() {
-  createCanvas(windowWidth, 200);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(0, 255, 0);
+  background(255);
 
-  square(300, 30, 150);
+  //middle top
+  
+  fill(255, 0, 0, 90);
+  circle(270, 200, 250);
+  noStroke();
+  
 
-  circle(140, 100, 170);
+
+  //bottom right
+  fill(0, 255, 0, 90);
+  circle(350, 315, 250);
+
+
+  //bottom left
+  fill(0, 0, 255, 90);
+  circle(200, 315, 250);
 }
