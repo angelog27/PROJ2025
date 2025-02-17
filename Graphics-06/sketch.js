@@ -44,7 +44,7 @@ let bugSpriteSheet;
 
 function preload() {
   bugSpriteSheet = loadImage("media/bugs.png"); // Load bug sprite sheet
-  gameFont = loadFont("font/PressStart2p-Regular.ttf"); // Load your font
+  gameFont = loadFont("font/PressStart2P-Regular.ttf"); // Load your font
 }
 
 function setup() {
