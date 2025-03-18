@@ -139,17 +139,18 @@ class Bug {
   }
 
   checkSquish(mx, my) {
-    let halfSize = this.frameSize / 2;
-    if (!this.isSquished && mx >= this.x - halfSize && mx <= this.x + halfSize &&
-        my >= this.y - halfSize && my <= this.y + halfSize) {
+    if (!this.isSquished && dist(mx, my, this.x, this.y) < this.frameSize / 2) {
       this.isSquished = true;
       score++;
-      squishSound.start();
+      this.speed += 0.2; 
       setTimeout(() => this.respawn(), 500);
-    } else if (!this.isSquished) {
+      squishSound.start();
+    }
+    else if (!this.isSquished) {
       missSound.start();
     }
-  }
+}
+
 
   respawn() {
     this.x = random(width);
@@ -157,6 +158,7 @@ class Bug {
     this.isSquished = false;
   }
 }
+
 
 function addNewBug() {
   let bug = new Bug(bugSpriteSheet, random(width), random(height), 2);
